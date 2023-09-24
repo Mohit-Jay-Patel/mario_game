@@ -220,7 +220,7 @@ function getCoins(coin,character){
   if( character.overlap(coin) && character.live && coin.get==false){
     character.coins+=1;
     coin.get=true;
-    coin.play();
+    mario_coin.play();
   };
 }
     
@@ -253,7 +253,7 @@ function positionOfCharacter(character){
     // Character affected by gravity
     falling(character);
 
-    // If character can only jump if standing on the object
+    // If character can only jump if standing on the objectevent
     if(character.standOnObj) jumping(character);
       
   }
@@ -268,7 +268,7 @@ function positionOfCharacter(character){
   enemyMushrooms.forEach(function(element){
     StepOnEnemy(character,element);
     if((element.touching.left||element.touching.right)&&character.live&&character.killing===0) die(mario);
-    kick.play();
+    mario_kick.play();
 
   })
 
@@ -311,7 +311,7 @@ function manualControl(character){
 function jumping(character){
 	if( (nose_y < 150 &&character.live) || (touchIsDown&&character.live) ){
 		character.velocity.y+=gameConfig.jump;
-    jump.play();
+    mario_jump.play();
 	}
 
 }
